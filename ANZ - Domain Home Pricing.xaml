@@ -1,15 +1,19 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ANZ___Domain_Home_Pricing" this:ANZ___Domain_Home_Pricing.in_URL="https://www.domain.com.au/property-profile" this:ANZ___Domain_Home_Pricing.in_Address="5 DARLA PLACE ROSEBERY NT 0832" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ANZ___Domain_Home_Pricing" this:ANZ___Domain_Home_Pricing.in_URL="https://www.domain.com.au/property-profile" this:ANZ___Domain_Home_Pricing.in_Address="5 DARLA PLACE ROSEBERY NT 0832" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_URL" Type="InArgument(x:String)" />
     <x:Property Name="in_Address" Type="InArgument(x:String)" />
+    <x:Property Name="out_LowPrice" Type="InArgument(x:String)" />
+    <x:Property Name="out_MidPrice" Type="InArgument(x:String)" />
+    <x:Property Name="out_HighPrice" Type="InArgument(x:String)" />
+    <x:Property Name="out_Status" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>789,947</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>789,1244</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ANZ___Domain_Home_Pricing_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="24">
+    <scg:List x:TypeArguments="x:String" Capacity="48">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -34,6 +38,8 @@
       <x:String>UiPath.UIAutomationNext.Enums</x:String>
       <x:String>System.Collections.ObjectModel</x:String>
       <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -58,19 +64,19 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ANZ___Domain_Home_Pricing" sap:VirtualizedContainerService.HintSize="509,782" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ANZ___Domain_Home_Pricing" sap:VirtualizedContainerService.HintSize="509,1079" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="467,690" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[in_URL]">
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="467,987" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[in_URL]">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="418,591" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="418,888" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -88,9 +94,20 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <Sequence DisplayName="Extracting Low Mid High price" sap:VirtualizedContainerService.HintSize="376,325" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Extracting Low Mid High price" sap:VirtualizedContainerService.HintSize="376,622" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <Sequence.Variables>
-                <Variable x:TypeArguments="x:String" Name="text" />
+                <Variable x:TypeArguments="x:String" Name="lowPrice" />
+                <Variable x:TypeArguments="x:String" Name="highPrice" />
+                <Variable x:TypeArguments="x:String" Name="midPrice" />
+                <Variable x:TypeArguments="x:String" Name="extractedPrices" />
+                <Variable x:TypeArguments="str:Regex" Name="Regex" />
+                <Variable x:TypeArguments="x:String" Name="lowPricePattern">
+                  <Variable.Default>
+                    <Literal x:TypeArguments="x:String">Low\$\d+k</Literal>
+                  </Variable.Default>
+                </Variable>
+                <Variable x:TypeArguments="x:String" Name="midPricePattern" />
+                <Variable x:TypeArguments="x:String" Name="highPricePattern" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -99,7 +116,7 @@
               </sap:WorkflowViewStateService.ViewState>
               <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'DIV'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
                 <ui:GetValue.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="afd58e54-3f96-44f4-a834-10b0e79009ee" InformativeScreenshot="af7d61d29342730dda496e78d8e68137" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='1' parentid='__domain_group/APP_ROOT' tag='DIV' /&gt;">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="afd58e54-3f96-44f4-a834-10b0e79009ee" InformativeScreenshot="b41d49a16bfee098f621122a4e411af5" Selector="&lt;html app='chrome.exe' title='Property Report for 5 Darla Place, Rosebery NT 0832' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='1' parentid='__domain_group/APP_ROOT' tag='DIV' /&gt;">
                     <ui:Target.TimeoutMS>
                       <InArgument x:TypeArguments="x:Int32" />
                     </ui:Target.TimeoutMS>
@@ -109,10 +126,34 @@
                   </ui:Target>
                 </ui:GetValue.Target>
                 <ui:GetValue.Value>
-                  <OutArgument x:TypeArguments="x:String">[text]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String">[extractedPrices]</OutArgument>
                 </ui:GetValue.Value>
               </ui:GetValue>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[text]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Fatal" Message="[extractedPrices]" />
+              <Assign sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="Assign_1">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[lowPrice]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[Regex.Match( extractedPrices, lowPricePattern).ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[midPrice]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[Regex.Match( extractedPrices, lowPricePattern).ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="Assign_3">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[highPrice]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[Regex.Match( extractedPrices, lowPricePattern).ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
             </Sequence>
           </Sequence>
         </ActivityAction>
