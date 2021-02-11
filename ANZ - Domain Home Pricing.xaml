@@ -1,11 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ANZ___Domain_Home_Pricing" this:ANZ___Domain_Home_Pricing.in_URL="https://www.domain.com.au/property-profile" this:ANZ___Domain_Home_Pricing.in_Address="21 NORFOLK STREET CARDIFF NSW 2285" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ANZ___Domain_Home_Pricing" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_URL" Type="InArgument(x:String)" />
     <x:Property Name="in_Address" Type="InArgument(x:String)" />
-    <x:Property Name="out_LowPrice" Type="InArgument(x:String)" />
-    <x:Property Name="out_MidPrice" Type="InArgument(x:String)" />
-    <x:Property Name="out_HighPrice" Type="InArgument(x:String)" />
-    <x:Property Name="out_Status" Type="InArgument(x:String)" />
+    <x:Property Name="out_LowPrice" Type="OutArgument(x:String)" />
+    <x:Property Name="out_MidPrice" Type="OutArgument(x:String)" />
+    <x:Property Name="out_HighPrice" Type="OutArgument(x:String)" />
+    <x:Property Name="out_Status" Type="OutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -13,7 +13,7 @@
   <sap:VirtualizedContainerService.HintSize>1368,2391</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ANZ___Domain_Home_Pricing_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="30">
+    <scg:List x:TypeArguments="x:String" Capacity="60">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -44,6 +44,7 @@
       <x:String>System.Runtime.InteropServices</x:String>
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Xml.Serialization</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -84,19 +85,19 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="915,1715" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[in_URL]">
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="1910,3386" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[in_URL]">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="881,1616" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1876,3287" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Address varification" sap:VirtualizedContainerService.HintSize="839,1524" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="Address varification" sap:VirtualizedContainerService.HintSize="1834,3195" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="extractedAddress" />
                 <Variable x:TypeArguments="x:Boolean" Name="addressAvailable" />
@@ -111,7 +112,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="797,49" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1792,49" sap2010:WorkflowViewState.IdRef="CommentOut_4">
                 <ui:CommentOut.Body>
                   <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_9">
                     <sap:WorkflowViewStateService.ViewState>
@@ -129,7 +130,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:CommentOut>
-              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="797,49" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1792,49" sap2010:WorkflowViewState.IdRef="CommentOut_5">
                 <ui:CommentOut.Body>
                   <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_10">
                     <sap:WorkflowViewStateService.ViewState>
@@ -147,7 +148,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:CommentOut>
-              <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" AlterIfDisabled="True" ClickBeforeTyping="True" DisplayName="Type Into Address" EmptyField="True" sap:VirtualizedContainerService.HintSize="797,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[in_Address.Trim]">
+              <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" AlterIfDisabled="True" ClickBeforeTyping="True" DisplayName="Type Into Address" EmptyField="True" sap:VirtualizedContainerService.HintSize="1792,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[in_Address.Trim]">
                 <ui:TypeInto.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b916ba5f-8ecc-4dec-99f0-cd5c5064b4b5" InformativeScreenshot="1b3ffd11d98f2dc57c3a41102dd3cc5a" Selector="&lt;webctrl tag='INPUT' /&gt;">
                     <ui:Target.TimeoutMS>
@@ -165,7 +166,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:TypeInto>
-              <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text First Address" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="GetValue_5">
+              <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text First Address" sap:VirtualizedContainerService.HintSize="1792,106" sap2010:WorkflowViewState.IdRef="GetValue_5">
                 <ui:GetValue.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="73313d19-62a8-4b23-a4ad-100d9faf9589" InformativeScreenshot="f0928aa186bcc753a8358beaa79a7399" Selector="&lt;html app='chrome.exe' title='Get a free property report with price estimate and history' /&gt;&lt;webctrl aria-role='option' id='downshift-0-item-0' tag='LI' /&gt;">
                     <ui:Target.TimeoutMS>
@@ -180,25 +181,25 @@
                   <OutArgument x:TypeArguments="x:String">[extractedAddress]</OutArgument>
                 </ui:GetValue.Value>
               </ui:GetValue>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="797,87" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="Warn" Message="[&quot;Address Got: &quot;+ in_Address+&quot; Address Found: &quot;+extractedAddress.Replace(&quot;,&quot;,&quot;&quot;).ToString.ToLower]" />
-              <If Condition="[Regex.IsMatch( in_Address.ToLower.Trim, extractedAddress.Replace(&quot;,&quot;,&quot;&quot;).ToString.ToLower.Trim)]" DisplayName="If - Address Matches" sap:VirtualizedContainerService.HintSize="797,718" sap2010:WorkflowViewState.IdRef="If_1">
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1792,87" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="Warn" Message="[&quot;Address Got: &quot;+ in_Address+&quot; Address Found: &quot;+extractedAddress.Replace(&quot;,&quot;,&quot;&quot;).ToString.ToLower]" />
+              <If Condition="[Regex.IsMatch( in_Address.ToLower.Trim, extractedAddress.Replace(&quot;,&quot;,&quot;&quot;).ToString.ToLower.Trim)]" DisplayName="If - Address Matches" sap:VirtualizedContainerService.HintSize="1792,2327" sap2010:WorkflowViewState.IdRef="If_1">
                 <If.Then>
-                  <Sequence DisplayName="Extracting Low Mid High price" sap:VirtualizedContainerService.HintSize="376,395" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Extracting Low Mid High price" sap:VirtualizedContainerService.HintSize="1371,2184" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="extractedPrices" />
                       <Variable x:TypeArguments="x:String" Name="lowPricePattern">
                         <Variable.Default>
-                          <Literal x:TypeArguments="x:String">Low\$\d+\w</Literal>
+                          <Literal x:TypeArguments="x:String">Low(\$\d+\w)|(Low\$\d+.\d+\w)/gmi</Literal>
                         </Variable.Default>
                       </Variable>
                       <Variable x:TypeArguments="x:String" Name="midPricePattern">
                         <Variable.Default>
-                          <Literal x:TypeArguments="x:String">Mid\$\d+\w</Literal>
+                          <Literal x:TypeArguments="x:String">Mid(\$\d+\w)|(Mid\$\d+.\d+\w)/gmi</Literal>
                         </Variable.Default>
                       </Variable>
                       <Variable x:TypeArguments="x:String" Name="highPricePattern">
                         <Variable.Default>
-                          <Literal x:TypeArguments="x:String">High\$\d+\w</Literal>
+                          <Literal x:TypeArguments="x:String">High(\$\d+\w)|(High\$\d+.\d+\w)/gmi</Literal>
                         </Variable.Default>
                       </Variable>
                       <Variable x:TypeArguments="x:Boolean" Name="priceDivFound" />
@@ -209,7 +210,7 @@
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click First Dropdown" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click First Dropdown" sap:VirtualizedContainerService.HintSize="1329,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                       <ui:Click.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -237,7 +238,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:Click>
-                    <ui:UiElementExists DisplayName="Element Exists Price Div" Exists="[priceDivFound]" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                    <ui:UiElementExists DisplayName="Element Exists Price Div" Exists="[priceDivFound]" sap:VirtualizedContainerService.HintSize="1329,68" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                       <ui:UiElementExists.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="520bebf8-d5c3-4f7d-8bd4-d3e5ce9ad4a5" Selector="&lt;html app='chrome.exe' title='Property Report for *' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='__domain_group/APP_ROOT' tag='DIV' parentclass='css-i9gxme' /&gt;" TimeoutMS="5000">
                           <ui:Target.WaitForReady>
@@ -246,21 +247,21 @@
                         </ui:Target>
                       </ui:UiElementExists.Target>
                     </ui:UiElementExists>
-                    <If Condition="[priceDivFound]" DisplayName="If Price Div Found" sap:VirtualizedContainerService.HintSize="334,49" sap2010:WorkflowViewState.IdRef="If_3">
+                    <If Condition="[priceDivFound]" DisplayName="If Price Div Found" sap:VirtualizedContainerService.HintSize="1329,1838" sap2010:WorkflowViewState.IdRef="If_3">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence DisplayName="Sequence Div Found" sap:VirtualizedContainerService.HintSize="376,681" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                        <Sequence DisplayName="Sequence Div Found" sap:VirtualizedContainerService.HintSize="908,1695" sap2010:WorkflowViewState.IdRef="Sequence_14">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get All price available" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
+                          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get All price available" sap:VirtualizedContainerService.HintSize="866,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
                             <ui:GetValue.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="afd58e54-3f96-44f4-a834-10b0e79009ee" InformativeScreenshot="b41d49a16bfee098f621122a4e411af5" Selector="&lt;html app='chrome.exe' title='Property Report for *' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='__domain_group/APP_ROOT' tag='DIV' parentclass='css-i9gxme' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -281,11 +282,11 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:GetValue>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Fatal" Message="[extractedPrices]" />
-                          <If Condition="[Regex.IsMatch(Regex.Match(extractedPrices, lowPricePattern).ToString, pricePattern)]" DisplayName="If - Low Price Found" sap:VirtualizedContainerService.HintSize="334,49" sap2010:WorkflowViewState.IdRef="If_4">
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="866,87" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Fatal" Message="[extractedPrices]" />
+                          <If Condition="[Regex.IsMatch(Regex.Match(extractedPrices, lowPricePattern).ToString, pricePattern)]" DisplayName="If - Low Price Found" sap:VirtualizedContainerService.HintSize="866,548" sap2010:WorkflowViewState.IdRef="If_4">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
@@ -327,7 +328,7 @@
                               </Sequence>
                             </If.Else>
                           </If>
-                          <If Condition="[Regex.IsMatch(Regex.Match(extractedPrices, midPricePattern).ToString, pricePattern)]" DisplayName="If - Mid Price Found" sap:VirtualizedContainerService.HintSize="334,49" sap2010:WorkflowViewState.IdRef="If_2">
+                          <If Condition="[Regex.IsMatch(Regex.Match(extractedPrices, midPricePattern).ToString, pricePattern)]" DisplayName="If - Mid Price Found" sap:VirtualizedContainerService.HintSize="866,49" sap2010:WorkflowViewState.IdRef="If_2">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -372,7 +373,7 @@
                               </Sequence>
                             </If.Else>
                           </If>
-                          <If Condition="[Regex.IsMatch(Regex.Match(extractedPrices, highPricePattern).ToString, pricePattern)]" DisplayName="If - High Price Found" sap:VirtualizedContainerService.HintSize="334,49" sap2010:WorkflowViewState.IdRef="If_5">
+                          <If Condition="[Regex.IsMatch(Regex.Match(extractedPrices, highPricePattern).ToString, pricePattern)]" DisplayName="If - High Price Found" sap:VirtualizedContainerService.HintSize="866,49" sap2010:WorkflowViewState.IdRef="If_5">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -417,33 +418,34 @@
                               </Sequence>
                             </If.Else>
                           </If>
-                          <If Condition="[(out_LowPrice isnot Nothing) And (out_MidPrice isnot Nothing) And ( out_HighPrice isnot Nothing)]" DisplayName="If - Prices Found Status" sap:VirtualizedContainerService.HintSize="334,49" sap2010:WorkflowViewState.IdRef="If_6">
+                          <If Condition="[(out_LowPrice = &quot;Price Missing&quot; ) And (out_MidPrice = &quot;Price Missing&quot;) And ( out_HighPrice = &quot;Price Missing&quot;)]" DisplayName="If - Prices Found Status" sap:VirtualizedContainerService.HintSize="866,564" sap2010:WorkflowViewState.IdRef="If_6">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <If.Then>
-                              <Sequence DisplayName="All Prices Found" sap:VirtualizedContainerService.HintSize="376,278" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                              <Sequence DisplayName="All Prices not Found" sap:VirtualizedContainerService.HintSize="200,62" sap2010:WorkflowViewState.IdRef="Sequence_24">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[&quot;All three Prices are Found&quot;]" />
-                                <Assign sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="Assign_14">
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Info" Message="[&quot;All three Prices are not Found&quot;]" />
+                                <Assign sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="Assign_16">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:String">[out_Status]</OutArgument>
                                   </Assign.To>
                                   <Assign.Value>
-                                    <InArgument x:TypeArguments="x:String">Successful</InArgument>
+                                    <InArgument x:TypeArguments="x:String">Failed</InArgument>
                                   </Assign.Value>
                                 </Assign>
                               </Sequence>
                             </If.Then>
                             <If.Else>
-                              <If Condition="[(out_LowPrice is Nothing) Or (out_MidPrice is Nothing) Or ( out_HighPrice is Nothing)]" DisplayName="If - Prices Not Found Status" sap:VirtualizedContainerService.HintSize="797,421" sap2010:WorkflowViewState.IdRef="If_7">
+                              <If Condition="[(out_LowPrice =&quot;Price Missing&quot;) Or (out_MidPrice = &quot;Price Missing&quot;) Or ( out_HighPrice =&quot;Price Missing&quot;)]" DisplayName="If - Prices Not Found Status" sap:VirtualizedContainerService.HintSize="621,421" sap2010:WorkflowViewState.IdRef="If_7">
                                 <If.Then>
                                   <Sequence DisplayName="Some Prices Found" sap:VirtualizedContainerService.HintSize="376,278" sap2010:WorkflowViewState.IdRef="Sequence_23">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -463,19 +465,20 @@
                                   </Sequence>
                                 </If.Then>
                                 <If.Else>
-                                  <Sequence DisplayName="All Prices not Found" sap:VirtualizedContainerService.HintSize="376,278" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                  <Sequence DisplayName="All Prices Found" sap:VirtualizedContainerService.HintSize="200,62" sap2010:WorkflowViewState.IdRef="Sequence_22">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Info" Message="[&quot;All three Prices are not Found&quot;]" />
-                                    <Assign sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="Assign_16">
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[&quot;All three Prices are Found&quot;]" />
+                                    <Assign sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="Assign_14">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:String">[out_Status]</OutArgument>
                                       </Assign.To>
                                       <Assign.Value>
-                                        <InArgument x:TypeArguments="x:String">Failed</InArgument>
+                                        <InArgument x:TypeArguments="x:String">Successful</InArgument>
                                       </Assign.Value>
                                     </Assign>
                                   </Sequence>
@@ -531,7 +534,7 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence sap:VirtualizedContainerService.HintSize="376,575" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                  <Sequence DisplayName="Sequence Address Not Found" sap:VirtualizedContainerService.HintSize="376,575" sap2010:WorkflowViewState.IdRef="Sequence_25">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -580,7 +583,7 @@
                   </Sequence>
                 </If.Else>
               </If>
-              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="797,49" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1792,49" sap2010:WorkflowViewState.IdRef="CommentOut_6">
                 <ui:CommentOut.Body>
                   <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,334" sap2010:WorkflowViewState.IdRef="Sequence_12">
                     <sap:WorkflowViewStateService.ViewState>
@@ -608,6 +611,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:CommentOut>
+              <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="1792,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
             </Sequence>
           </Sequence>
         </ActivityAction>
