@@ -84,6 +84,13 @@
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
           <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="855,2052" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="pricePattern">
+                <Variable.Default>
+                  <Literal x:TypeArguments="x:String">d+k</Literal>
+                </Variable.Default>
+              </Variable>
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -239,7 +246,7 @@
                         <InArgument x:TypeArguments="x:String">[Regex.Match( extractedPrices, lowPricePattern).ToString.Replace("Low","").ToString]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <If sap:VirtualizedContainerService.HintSize="484,203" sap2010:WorkflowViewState.IdRef="If_2" />
+                    <If Condition="[Regex.IsMatch(Regex.Match( extractedPrices, lowPricePattern).ToString,)]" sap:VirtualizedContainerService.HintSize="484,203" sap2010:WorkflowViewState.IdRef="If_2" />
                     <Assign sap:VirtualizedContainerService.HintSize="484,59" sap2010:WorkflowViewState.IdRef="Assign_2">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[midPrice]</OutArgument>
