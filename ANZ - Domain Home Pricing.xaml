@@ -247,7 +247,7 @@
                     </ui:Click>
                     <ui:UiElementExists DisplayName="Element Exists Price Div" Exists="[priceDivFound]" sap:VirtualizedContainerService.HintSize="1681,68" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                       <ui:UiElementExists.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="520bebf8-d5c3-4f7d-8bd4-d3e5ce9ad4a5" Selector="&lt;html app='chrome.exe' title='Property Report for *' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='__domain_group/APP_ROOT' tag='DIV' parentclass='css-i9gxme' /&gt;" TimeoutMS="5000">
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="520bebf8-d5c3-4f7d-8bd4-d3e5ce9ad4a5" Selector="&lt;html app='chrome.exe' title='Property Report for *' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='__domain_group/APP_ROOT' tag='DIV' parentclass='css-i9gxme' /&gt;" TimeoutMS="3000">
                           <ui:Target.WaitForReady>
                             <InArgument x:TypeArguments="ui:WaitForReady" />
                           </ui:Target.WaitForReady>
