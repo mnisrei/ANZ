@@ -6,11 +6,12 @@
     <x:Property Name="out_MidPrice" Type="OutArgument(x:String)" />
     <x:Property Name="out_HighPrice" Type="OutArgument(x:String)" />
     <x:Property Name="out_Status" Type="OutArgument(x:String)" />
+    <x:Property Name="out_ExtractedAddress" Type="OutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>894,750</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>894,1419</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ANZ___NAB_com_Property_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="56">
@@ -75,26 +76,26 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ANZ___NAB_com_Property" sap:VirtualizedContainerService.HintSize="509,545" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ANZ___NAB_com_Property" sap:VirtualizedContainerService.HintSize="846,1214" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="467,391" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[in_URL]">
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="804,1060" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[in_URL]">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,292" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="770,961" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
-            <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" AlterIfDisabled="True" ClickBeforeTyping="True" DisplayName="Type Into Address" EmptyField="False" sap:VirtualizedContainerService.HintSize="200,49" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[in_Address.Trim]">
+            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="728,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+            <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" AlterIfDisabled="True" ClickBeforeTyping="True" DisplayName="Type Into Address" EmptyField="False" sap:VirtualizedContainerService.HintSize="728,49" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[in_Address.Trim]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1084d36a-91f8-4052-9850-582f13734a8a" InformativeScreenshot="ac2518970f158ca71ad8aafebf73b40b" Selector="&lt;webctrl tag='INPUT' type='text' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -112,17 +113,17 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:TypeInto>
-            <Pick DisplayName="Pick -  Address Found or Not" sap:VirtualizedContainerService.HintSize="200,49" sap2010:WorkflowViewState.IdRef="Pick_1">
+            <Pick DisplayName="Pick -  Address Found or Not" sap:VirtualizedContainerService.HintSize="728,718" sap2010:WorkflowViewState.IdRef="Pick_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <PickBranch DisplayName="PickBranch - Address Div Found" sap:VirtualizedContainerService.HintSize="200,49" sap2010:WorkflowViewState.IdRef="PickBranch_1">
+              <PickBranch DisplayName="PickBranch - Address Div Found" sap:VirtualizedContainerService.HintSize="354,672" sap2010:WorkflowViewState.IdRef="PickBranch_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -146,7 +147,7 @@
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:UiElementExists>
                 </PickBranch.Trigger>
-                <Sequence DisplayName="Getting Low Mid and High Price" sap:VirtualizedContainerService.HintSize="200,62" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Getting Low Mid and High Price" sap:VirtualizedContainerService.HintSize="304,418" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="lowHighPriceExtracted" />
                     <Variable x:TypeArguments="x:String" Name="midPriceExtracted" />
@@ -156,11 +157,11 @@
                   </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Address                                                                       " sap:VirtualizedContainerService.HintSize="200,49" sap2010:WorkflowViewState.IdRef="GetValue_3">
+                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Address                                                                       " sap:VirtualizedContainerService.HintSize="262,49" sap2010:WorkflowViewState.IdRef="GetValue_3">
                     <ui:GetValue.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4f43da25-008c-47d0-8b39-ae1fc62b6e23" InformativeScreenshot="1c7f8bce2ed6612076756953298649aa" Selector="&lt;html app='chrome.exe' title='NAB Property Insights: Estimate Property Value &amp;amp; Get Property Reports' /&gt;&lt;webctrl css-selector='body&amp;gt;ul&amp;gt;li' tag='LI' class='ui-menu-item' parentclass='ui-menu ui-widget ui-widget-content ui-autocomplete ui-front' /&gt;&lt;webctrl tag='DIV' class='ui-menu-item-wrapper' css-selector='body&amp;gt;ul&amp;gt;li&amp;gt;div' parentclass='ui-menu-item' parentid='ui-id-1' /&gt;">
                         <ui:Target.TimeoutMS>
@@ -181,7 +182,15 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:GetValue>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,49" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Addess Got: &quot;+in_Address.Trim+&quot; |||||| Address Extracted &quot;+extractedAddress.trim.Replace(&quot;,&quot;,&quot;&quot;).ToLower.ToString]">
+                  <Assign sap:VirtualizedContainerService.HintSize="262,59" sap2010:WorkflowViewState.IdRef="Assign_18">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[out_ExtractedAddress]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[extractedAddress.ToLower]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="262,49" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Addess Got: &quot;+in_Address.Trim+&quot; |||||| Address Extracted &quot;+extractedAddress.trim.Replace(&quot;,&quot;,&quot;&quot;).ToLower.ToString]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -189,7 +198,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:LogMessage>
-                  <If Condition="[Regex.IsMatch( in_Address.ToLower, extractedAddress.trim.Replace(&quot;,&quot;,&quot;&quot;).ToLower.ToString)]" sap:VirtualizedContainerService.HintSize="200,49" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If Condition="[Regex.IsMatch( in_Address.ToLower, extractedAddress.trim.Replace(&quot;,&quot;,&quot;&quot;).ToLower.ToString)]" sap:VirtualizedContainerService.HintSize="262,49" sap2010:WorkflowViewState.IdRef="If_1">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -553,7 +562,7 @@
                   </If>
                 </Sequence>
               </PickBranch>
-              <PickBranch DisplayName="PickBranch - Address Div Not Found" sap:VirtualizedContainerService.HintSize="200,49" sap2010:WorkflowViewState.IdRef="PickBranch_2">
+              <PickBranch DisplayName="PickBranch - Address Div Not Found" sap:VirtualizedContainerService.HintSize="200,672" sap2010:WorkflowViewState.IdRef="PickBranch_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -627,6 +636,6 @@
         </ActivityAction>
       </ui:OpenBrowser.Body>
     </ui:OpenBrowser>
-    <ui:KillProcess Process="{x:Null}" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="467,22" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="chrome" />
+    <ui:KillProcess Process="{x:Null}" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="804,22" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="chrome" />
   </Sequence>
 </Activity>
