@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2252,3966</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2252,3920</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ANZ___Open_Agent_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -73,7 +73,7 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ANZ_Open_Agent" sap:VirtualizedContainerService.HintSize="2262,3761" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ANZ_Open_Agent" sap:VirtualizedContainerService.HintSize="2262,3715" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="websiteOpened" />
     </Sequence.Variables>
@@ -82,7 +82,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:UiElementExists DisplayName="Element Exists Website opened Already" Exists="[websiteOpened]" sap:VirtualizedContainerService.HintSize="2220,51" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+    <ui:UiElementExists DisplayName="Element Exists Website opened Already" Exists="[websiteOpened]" sap:VirtualizedContainerService.HintSize="2220,49" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
       <ui:UiElementExists.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7ed02255-2085-4ae7-b711-ac476c8a12b0" InformativeScreenshot="d7b8db7b60cd5cd1c44491be14146f5f" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Free property report with price estimate and history - Google Ch*' /&gt;" TimeoutMS="3000">
           <ui:Target.WaitForReady>
@@ -97,7 +97,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:UiElementExists>
-    <If Condition="[websiteOpened]" sap:VirtualizedContainerService.HintSize="2220,51" sap2010:WorkflowViewState.IdRef="If_9">
+    <If Condition="[websiteOpened]" sap:VirtualizedContainerService.HintSize="2220,49" sap2010:WorkflowViewState.IdRef="If_9">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -130,13 +130,13 @@
         </ui:OpenBrowser>
       </If.Else>
     </If>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser Open Agent" sap:VirtualizedContainerService.HintSize="2220,3487" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="188a5b0e77b77f1d8991204496f84ac3" Selector="&lt;html app='chrome.exe' omit:htmlwindowname='{&amp;quot;tabkey&amp;quot;:&amp;quot;3345793d-1375-442f-9ffe-b6ae32f048d4&amp;quot;,&amp;quot;createdAt&amp;quot;:&amp;quot;2021-02-15T13:38:38.347Z&amp;quot;,&amp;quot;store&amp;quot;:{&amp;quot;journey&amp;quot;:{&amp;quot;id&amp;quot;:24523126,&amp;quot;journeykey&amp;quot;:&amp;quot;7bf76a98-3672-4866-ae86-9bb67d0254b0&amp;quot;,&amp;quot;visitorusermappingid&amp;quot;:&amp;quot;14053120&amp;quot;,&amp;quot;journeytypeid&amp;quot;:&amp;quot;10&amp;quot;,&amp;quot;propertyrelationshipid&amp;quot;:nu*' title='Free property report with price estimate and history' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser Open Agent" sap:VirtualizedContainerService.HintSize="2220,3445" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="188a5b0e77b77f1d8991204496f84ac3" Selector="&lt;html app='chrome.exe' omit:htmlwindowname='{&amp;quot;tabkey&amp;quot;:&amp;quot;3345793d-1375-442f-9ffe-b6ae32f048d4&amp;quot;,&amp;quot;createdAt&amp;quot;:&amp;quot;2021-02-15T13:38:38.347Z&amp;quot;,&amp;quot;store&amp;quot;:{&amp;quot;journey&amp;quot;:{&amp;quot;id&amp;quot;:24523126,&amp;quot;journeykey&amp;quot;:&amp;quot;7bf76a98-3672-4866-ae86-9bb67d0254b0&amp;quot;,&amp;quot;visitorusermappingid&amp;quot;:&amp;quot;14053120&amp;quot;,&amp;quot;journeytypeid&amp;quot;:&amp;quot;10&amp;quot;,&amp;quot;propertyrelationshipid&amp;quot;:nu*' title='Free property report with price estimate and history' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="2186,3341" sap2010:WorkflowViewState.IdRef="Sequence_33">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="2186,3299" sap2010:WorkflowViewState.IdRef="Sequence_33">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="extractedAddress" />
               <Variable x:TypeArguments="str:Regex" Name="Regex" />
@@ -148,7 +148,7 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into - Address" EmptyField="True" sap:VirtualizedContainerService.HintSize="2144,51" sap2010:WorkflowViewState.IdRef="TypeInto_5" SimulateType="True" Text="[in_Address]">
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into - Address" EmptyField="True" sap:VirtualizedContainerService.HintSize="2144,49" sap2010:WorkflowViewState.IdRef="TypeInto_5" SimulateType="True" Text="[in_Address]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3aae25a2-7294-4466-825d-c6a761c1df8f" InformativeScreenshot="38f9ba62c4befd5de7351146a0f9b1db" Selector="&lt;webctrl id='input-address' tag='INPUT' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -166,7 +166,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:TypeInto>
-            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Address" sap:VirtualizedContainerService.HintSize="2144,51" sap2010:WorkflowViewState.IdRef="GetValue_5">
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Address" sap:VirtualizedContainerService.HintSize="2144,49" sap2010:WorkflowViewState.IdRef="GetValue_5">
               <ui:GetValue.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="523194a9-2bf5-4ee3-bc54-a0724d193aa0" InformativeScreenshot="93e2537c0ff534d3b883234f8b450b5e" Selector="&lt;html app='chrome.exe' title='Free property report with price estimate and history' idx='*' /&gt;&lt;webctrl parentid='form-property-address' tag='LI' css-selector='body&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li' parentclass='address-autocomplete' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -187,7 +187,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:GetValue>
-            <If Condition="[Regex.IsMatch( in_Address.ToLower, extractedAddress.trim.Replace(&quot;,&quot;,&quot;&quot;).ToLower.ToString)]" DisplayName="If - Address Found?" sap:VirtualizedContainerService.HintSize="2144,2978" sap2010:WorkflowViewState.IdRef="If_16">
+            <If Condition="[Regex.IsMatch( in_Address.ToLower, extractedAddress.trim.Replace(&quot;,&quot;,&quot;&quot;).ToLower.ToString)]" DisplayName="If - Address Found?" sap:VirtualizedContainerService.HintSize="2144,2940" sap2010:WorkflowViewState.IdRef="If_16">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -195,7 +195,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence DisplayName="Price Extraction" sap:VirtualizedContainerService.HintSize="1723,2830" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                <Sequence DisplayName="Price Extraction" sap:VirtualizedContainerService.HintSize="1723,2797" sap2010:WorkflowViewState.IdRef="Sequence_31">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="extractedPrices" />
                     <Variable x:TypeArguments="x:String" Default="\$((\d+\.\d+)|\d+)\w\s*LOW" Name="lowPricePattern" />
@@ -316,7 +316,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:Click>
-                  <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into Name" sap:VirtualizedContainerService.HintSize="1681,51" sap2010:WorkflowViewState.IdRef="TypeInto_6" SimulateType="True" Text="Robin">
+                  <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into Name" sap:VirtualizedContainerService.HintSize="1681,49" sap2010:WorkflowViewState.IdRef="TypeInto_6" SimulateType="True" Text="Robin">
                     <ui:TypeInto.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7f180d21-fa51-4f60-986d-615b993f7ae4" InformativeScreenshot="5d4d9eccffd03929fd79f1bfeda256a2" Selector="&lt;html app='chrome.exe' title='Free property report with price estimate and history' /&gt;&lt;webctrl tabindex='0' tag='INPUT' class='form-control' id='lc-name' parentclass='lc-form-container' parentid='snap-lcName' /&gt;">
                         <ui:Target.TimeoutMS>
@@ -334,7 +334,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:TypeInto>
-                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Next Button" sap:VirtualizedContainerService.HintSize="1681,51" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Next Button" sap:VirtualizedContainerService.HintSize="1681,49" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                     <ui:Click.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>
@@ -362,7 +362,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:Click>
-                  <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into Email" sap:VirtualizedContainerService.HintSize="1681,51" sap2010:WorkflowViewState.IdRef="TypeInto_7" SimulateType="True" Text="508ada@gmail.com">
+                  <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into Email" sap:VirtualizedContainerService.HintSize="1681,49" sap2010:WorkflowViewState.IdRef="TypeInto_7" SimulateType="True" Text="508ada@gmail.com">
                     <ui:TypeInto.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d1084ae6-d74f-4bf1-af23-22dda68e54eb" InformativeScreenshot="cacccd9753a4fc8e896472053a5f6013" Selector="&lt;html app='chrome.exe' title='Free property report with price estimate and history' /&gt;&lt;webctrl tabindex='0' tag='INPUT' type='email' id='lc-email' parentid='snap-lcEmail' /&gt;">
                         <ui:Target.TimeoutMS>
@@ -380,7 +380,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:TypeInto>
-                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Next Button" sap:VirtualizedContainerService.HintSize="1681,51" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Next Button" sap:VirtualizedContainerService.HintSize="1681,49" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                     <ui:Click.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>
@@ -408,7 +408,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:Click>
-                  <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into Phone Number" sap:VirtualizedContainerService.HintSize="1681,51" sap2010:WorkflowViewState.IdRef="TypeInto_8" SimulateType="True" Text="61428431538">
+                  <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into Phone Number" sap:VirtualizedContainerService.HintSize="1681,49" sap2010:WorkflowViewState.IdRef="TypeInto_8" SimulateType="True" Text="61428431538">
                     <ui:TypeInto.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="347adbe2-2562-4e7f-9dfe-380ed733c3b4" InformativeScreenshot="3516d1a7a583fac5203b41c5bc70d9af" Selector="&lt;html app='chrome.exe' title='Free property report with price estimate and history' /&gt;&lt;webctrl tabindex='0' tag='INPUT' type='tel' class='form-control' id='lc-phone' parentid='snap-lcPhone' /&gt;">
                         <ui:Target.TimeoutMS>
@@ -426,7 +426,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:TypeInto>
-                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Next Button" sap:VirtualizedContainerService.HintSize="1681,51" sap2010:WorkflowViewState.IdRef="Click_12" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Next Button" sap:VirtualizedContainerService.HintSize="1681,49" sap2010:WorkflowViewState.IdRef="Click_12" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                     <ui:Click.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>
@@ -456,7 +456,7 @@
                   </ui:Click>
                   <ui:UiElementExists DisplayName="Element Exists - Price Div" Exists="[priceDivFound]" sap:VirtualizedContainerService.HintSize="1681,68" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
                     <ui:UiElementExists.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ea40754a-8216-44dc-86c7-1133352ab1b6" Selector="&lt;html app='chrome.exe' title='Find and Compare Real Estate Agents - OpenAgent' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' tag='DIV' class='valuation' parentclass='avminfo showavm' /&gt;" TimeoutMS="25000">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ea40754a-8216-44dc-86c7-1133352ab1b6" Selector="&lt;html app='chrome.exe' title='Find and Compare Real Estate Agents - OpenAgent' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' tag='DIV' class='valuation' parentclass='avminfo showavm' /&gt;" TimeoutMS="30000">
                         <ui:Target.WaitForReady>
                           <InArgument x:TypeArguments="ui:WaitForReady" />
                         </ui:Target.WaitForReady>
@@ -469,7 +469,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:UiElementExists>
-                  <If Condition="[priceDivFound]" DisplayName="If Price Div Found" sap:VirtualizedContainerService.HintSize="1681,1327" sap2010:WorkflowViewState.IdRef="If_15">
+                  <If Condition="[priceDivFound]" DisplayName="If Price Div Found" sap:VirtualizedContainerService.HintSize="1681,1306" sap2010:WorkflowViewState.IdRef="If_15">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -477,7 +477,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence DisplayName="Sequence Div Found" sap:VirtualizedContainerService.HintSize="1260,1179" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                      <Sequence DisplayName="Sequence Div Found" sap:VirtualizedContainerService.HintSize="1260,1163" sap2010:WorkflowViewState.IdRef="Sequence_29">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -498,15 +498,15 @@
                             <OutArgument x:TypeArguments="x:String">[extractedPrices]</OutArgument>
                           </ui:GetValue.Value>
                         </ui:GetValue>
-                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1218,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1218,49" sap2010:WorkflowViewState.IdRef="CommentOut_2">
                           <ui:CommentOut.Body>
-                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_19">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[extractedPrices]" />
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[extractedPrices]" />
                             </Sequence>
                           </ui:CommentOut.Body>
                           <sap:WorkflowViewStateService.ViewState>
@@ -516,7 +516,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:CommentOut>
-                        <If Condition="[Regex.IsMatch(Regex.Match(extractedPrices, lowPricePattern).ToString, pricePattern)]" DisplayName="If - Low Price Found" sap:VirtualizedContainerService.HintSize="1218,51" sap2010:WorkflowViewState.IdRef="If_10">
+                        <If Condition="[Regex.IsMatch(Regex.Match(extractedPrices, lowPricePattern).ToString, pricePattern)]" DisplayName="If - Low Price Found" sap:VirtualizedContainerService.HintSize="1218,49" sap2010:WorkflowViewState.IdRef="If_10">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -560,7 +560,7 @@
                             </Sequence>
                           </If.Else>
                         </If>
-                        <If Condition="[Regex.IsMatch(Regex.Match(extractedPrices, midPricePattern).ToString, pricePattern)]" DisplayName="If - Mid Price Found" sap:VirtualizedContainerService.HintSize="1218,51" sap2010:WorkflowViewState.IdRef="If_11">
+                        <If Condition="[Regex.IsMatch(Regex.Match(extractedPrices, midPricePattern).ToString, pricePattern)]" DisplayName="If - Mid Price Found" sap:VirtualizedContainerService.HintSize="1218,49" sap2010:WorkflowViewState.IdRef="If_11">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -604,7 +604,7 @@
                             </Sequence>
                           </If.Else>
                         </If>
-                        <If Condition="[Regex.IsMatch(Regex.Match(extractedPrices, highPricePattern).ToString, pricePattern)]" DisplayName="If - High Price Found" sap:VirtualizedContainerService.HintSize="1218,51" sap2010:WorkflowViewState.IdRef="If_12">
+                        <If Condition="[Regex.IsMatch(Regex.Match(extractedPrices, highPricePattern).ToString, pricePattern)]" DisplayName="If - High Price Found" sap:VirtualizedContainerService.HintSize="1218,49" sap2010:WorkflowViewState.IdRef="If_12">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -648,7 +648,7 @@
                             </Sequence>
                           </If.Else>
                         </If>
-                        <If Condition="[(out_LowPrice = &quot;Price Missing&quot; ) And (out_MidPrice = &quot;Price Missing&quot;) And ( out_HighPrice = &quot;Price Missing&quot;)]" DisplayName="If - Prices Found Status" sap:VirtualizedContainerService.HintSize="1218,577" sap2010:WorkflowViewState.IdRef="If_14">
+                        <If Condition="[(out_LowPrice = &quot;Price Missing&quot; ) And (out_MidPrice = &quot;Price Missing&quot;) And ( out_HighPrice = &quot;Price Missing&quot;)]" DisplayName="If - Prices Found Status" sap:VirtualizedContainerService.HintSize="1218,569" sap2010:WorkflowViewState.IdRef="If_14">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -656,15 +656,15 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence DisplayName="All Prices not Found" sap:VirtualizedContainerService.HintSize="376,283" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                            <Sequence DisplayName="All Prices not Found" sap:VirtualizedContainerService.HintSize="376,278" sap2010:WorkflowViewState.IdRef="Sequence_26">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="Info" Message="[&quot;All three Prices are not Found&quot;]" />
-                              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_24">
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="Info" Message="[&quot;All three Prices are not Found&quot;]" />
+                              <Assign sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="Assign_24">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[out_Status]</OutArgument>
                                 </Assign.To>
@@ -675,16 +675,16 @@
                             </Sequence>
                           </If.Then>
                           <If.Else>
-                            <If Condition="[(out_LowPrice =&quot;Price Missing&quot;) Or (out_MidPrice = &quot;Price Missing&quot;) Or ( out_HighPrice =&quot;Price Missing&quot;)]" DisplayName="If - Prices Not Found Status" sap:VirtualizedContainerService.HintSize="797,430" sap2010:WorkflowViewState.IdRef="If_13">
+                            <If Condition="[(out_LowPrice =&quot;Price Missing&quot;) Or (out_MidPrice = &quot;Price Missing&quot;) Or ( out_HighPrice =&quot;Price Missing&quot;)]" DisplayName="If - Prices Not Found Status" sap:VirtualizedContainerService.HintSize="797,426" sap2010:WorkflowViewState.IdRef="If_13">
                               <If.Then>
-                                <Sequence DisplayName="Some Prices Found" sap:VirtualizedContainerService.HintSize="376,283" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                                <Sequence DisplayName="Some Prices Found" sap:VirtualizedContainerService.HintSize="376,278" sap2010:WorkflowViewState.IdRef="Sequence_27">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="Info" Message="[&quot;One or Two Price not Found&quot;]" />
-                                  <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_25">
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="Info" Message="[&quot;One or Two Price not Found&quot;]" />
+                                  <Assign sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="Assign_25">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:String">[out_Status]</OutArgument>
                                     </Assign.To>
@@ -814,7 +814,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="2144,51" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="https://www.openagent.com.au/property-reports">
+            <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="2144,49" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="https://www.openagent.com.au/property-reports">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
